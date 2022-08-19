@@ -1,0 +1,103 @@
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 50;
+}
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 125px;
+    padding: 0 100px;
+}
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+.header__logo::after {
+    content: '';
+    width: calc(100vw * 0.183);
+    height: 1px;
+    background-color: #DE0507;
+    margin-left: 30px;
+}
+.header__logo__icon {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #DE0507;
+    margin-right: 20px;
+}
+.name__company {
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;
+}
+.description__company {
+    font-size: 12px;
+    white-space: nowrap;
+}
+.menu__list { display: flex; }
+.menu__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.menu__item:not(:last-child) { margin: 0 20px 0 0; }
+.menu__item::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -10px;
+    background-color: #DE0507;
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+.hamburger__icon {
+    width: 25px;
+    height: 23px;
+    background-image: url(../images/icons/hamburger_icon.png);
+    background-repeat: no-repeat;
+}
+.phone__icon {
+    width: 30px;
+    height: 24px;
+    background-image: url(../images/icons/phone_icon.png);
+    background-repeat: no-repeat;
+}
+.menu__item:hover { cursor: pointer;}
+.menu__item:hover::after {
+    bottom: -8px;
+    opacity: 1;
+}
+@media (max-width:992px) {
+    .header__container {  padding: 0 60px;  }
+}
+@media (max-width:767px) {
+    .header__container {  padding: 0 30px; }
+}
+@media (max-width:540px) {
+    .header__container { padding: 0 20px; }
+}
+@media (max-width:450px) {
+    .header__container {
+        margin: 0 auto;
+        justify-content: center;
+        min-height: 110px;
+    }
+    .header__logo{
+        width: 450px;
+        justify-content: center;
+    }
+    .header__logo::after { content: none; }
+    .header__logo__icon { margin-right: 10px; }
+    .header__menu { width: 450px; }
+    .menu__list { justify-content: space-between; }
+}

@@ -1,0 +1,17 @@
+.footer {
+    width: 100%;
+    background-color: #1A181A;
+}
+.footer__container {
+    height: 108px;
+    display: flex;
+    align-items: center;
+}
+.footer__logo { margin-left: 180px; }
+@media (max-width:992px) {
+    .footer__container { justify-content: center; }
+    .footer__logo { margin: 0; }
+}
+@media (max-width:540px) {
+    .footer__container { height: 90px; }
+}
